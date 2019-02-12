@@ -1,0 +1,163 @@
+\documentclass[a4paper,10pt]{article}
+
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo} 				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\usepackage{tabularx}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Kozioł for ShareLaTeX use
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+%Tweak a bit the top margin
+%\addtolength{\voffset}{-1.3cm}
+
+%Italian hyphenation for the word: ''corporations''
+\hyphenation{im-pre-se}
+
+%-------------WATERMARK TEST [**not part of a CV**]---------------
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+%WATERMARK TEST [**not part of a CV**]---------------
+%\font\wm=''Baskerville:color=787878'' at 8pt
+%\font\wmweb=''Baskerville:color=FF1493'' at 8pt
+%{\wm 
+%	\begin{textblock}{1}(0,0)
+%		\rotatebox{-90}{\parbox{500mm}{
+%			Typeset by Alessandro Plasmati with \XeTeX\  \today\ for 
+%			{\wmweb \href{http://www.aleplasmati.comuv.com}{aleplasmati.comuv.com}}
+%		}
+%	}
+%	\end{textblock}
+%}
+
+\pagestyle{empty} % non-numbered pages
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------
+\par{\centering
+		{\Huge Yasmin \textsc{Honório de Medeiros}
+	}\bigskip\par}
+
+%--------------------SECTIONS-----------------------------------
+%Section: Personal Data
+\centering{
+\textsc{Brazilian, single, 24 years old}
+\\ \textsc{Paula Bueno Street, 190 - Campinas/SP - Brazil}
+\\ aminmedeiros@hotmail.com / +55(19)97102-6722 
+\\ \url{linkedin.com/in/yasmin-honório-de-medeiros-6a1737112/}
+%\\ \url{github.com}
+}
+
+\begin{flushleft}
+
+%Section: Objetivo Prof
+\section{Professional Objective}
+
+\tab Engineer/Analist Jr
+
+%Section: Resumo
+\section{Resume}
+
+\tab Firmware developer at Venturus, with Mechatronics Engineering degree from UFRN (2016), doing MEng in Electrial Engineering at Unicamp. Advanced to fluent english, international experience of one year at Lund (Sweden). Knowledge of programming languages (such as C/C++, Python, Angular and VHDL) and softwares like VSCode, Matlab, Simulink, Creo Elements and SCADA. Experience with automation, frontend, embedded systems and microcontrollers. 
+
+
+%Section: Education
+\section{Education}
+\begin{tabular}{R{3cm}l}	
+ \textsc{July, 2019} & \textsc{M.Eng. Electrical Engineering}\\ & University of Campinas (UNICAMP) &\\
+\textsc{June, 2016} & \textsc{B.E. Mechatronic Engineering} \\& Federal University of Rio Grande do Norte (UFRN) \\&\\
+\textsc{June, 2015} & \textsc{Control Engineering} \\ & 1-year scholarship at Lund University - Sweden  \\&\\
+\textsc{June, 2014} &  \textsc{B.Sc. Science and Technology}\\
+& Federal University of Rio Grande do Norte (UFRN)
+\end{tabular}
+
+%Section: Work Experience at the top
+\section{Experience}
+\begin{tabular}{R{3cm}|p{11cm}}
+\textsc{Jul/2018-now} & \textsc{Venturus} \\ & \emph{Development Analyst} \\ & Firmware development projects for embedded systems (C/applied C programming) and frontend development with Angular. \\\multicolumn{2}{c}{} \\
+ \textsc{Oct/2017-Jun/2018} & \textsc{Cepagri (Research Center in Meteorology and Climate Applied to Agriculture)} \\ & \emph{Programming Scholarship} \\ & Programming in Python for an Agricultural Zoning System, with variable prediction and user interface. \\\multicolumn{2}{c}{} \\
+ \textsc{April-June/2016} & \textsc{Laboratory of Oil Measurement Evaluation (LAMP - UFRN)} \\&\emph{Intern - Assistant on the making of instrumentation projects} \\& Programming of PLCs, testing and installation of sensors, use of automation tecniques and simulation of projects on Elipse SCADA.
+ \end{tabular}
+
+\begin{tabular}{R{3cm}|p{11cm}}
+ \textsc{March-May/2016} & \textsc{Federal University of Rio Grande do Norte} \\&\emph{Co-teacher of the short course “Introduction to CAD and CAM Tecnology” (40h)}\\\multicolumn{2}{c}{} \\
+%\textsc{Nov, 2015 and 2016} & \textsc{Regional First Lego League (FLL) at Natal/RN} \\&\emph{Volunteer as Robotic Design judge on the competition}\\\multicolumn{2}{c}{} \\
+%\textsc{October/2015} & \textsc{XII Brazilian Symposium of Intelligent Automation (SBAI)} \\& \emph{Volunteer at the organization} \\ \multicolumn{2}{c}{} \\
+\textsc{Feb-June/2014} & \textsc{Department of Control and Automation (DCA - UFRN)} \\& \emph{Mentor at the project “RoboCup Competition as an Incentive for Teens and Girls to join Engineering area”} \\ \multicolumn{2}{c}{} \\
+\textsc{Apr/2012-Dec/2013} & \textsc{Science \& Technology School (EC\&T - UFRN)} \\ & \emph{Monitor of Linear Algebra at the teaching project “The Integrated Monitoring Program of EC\&T”}
+\end{tabular}
+
+
+
+
+
+%Section: Scholarships and additional info
+\section{Additional Information}
+\begin{tabular}{R{3cm}|p{11cm}}
+ \textsc{English} & Advanced (TOEFL certificate) / Fluent \\  \multicolumn{2}{c}{} \\
+ \textsc{Introduction to CANoe} & 21h-course (VECTOR certificate) \\  \multicolumn{2}{c}{} \\
+ \textsc{Metrology} & 40h-course (SENAI certificate) \\  \multicolumn{2}{c}{} \\
+ \textsc{MS Office} & Advanced (self-taught) \\  \multicolumn{2}{c}{} \\
+ \textsc{Programming} & C/C++, Python, VHDL, Angular, LaTeX and HTML \\  \multicolumn{2}{c}{} \\
+ \textsc{Softwares} & VSCode, Matlab, Simulink, QT Creator, Netbeans, Creo Elements, Geogebra, Elipse SCADA \\  \multicolumn{2}{c}{} \\
+ \textsc{Experience with} & Ladder Diagrams, SFC, PID Control, Numeric Computing methods, OpenCV, Linux e Windows systems, Arduino UNO, Beaglebone Black, FPGA, PLCs, Gitlab \\  \multicolumn{2}{c}{} \\
+ \textsc{Study in} & Electric, Electronic, Control, Signal Processing, Digital Image Processing, Introduction to Tools and Machines 
+ \end{tabular}
+ 
+
+
+\section{Main Projects}
+\begin{tabular}{R{3cm}|p{11cm}}
+\textsc{2017} & \textsc{Robotic Berimbau Orchestra} \\& Use of embedded systems and MIDI commands to activate the drumstick and rock frames, attached to 4 berimbaus \\ \multicolumn{2}{c}{} \\
+\textsc{2016} & \textsc{Ball and Plate Control System for Teaching Purpose} \\ & Manufacturing of que variable plane system, position control via image processing and commands via Matlab \\ \multicolumn{2}{c}{} \\
+\textsc{2015} & \textsc{Prototyping Machine for Electric Circuits} \\& Electromechanic production of 3 axes for the snipping tool movement attached to the system, creating trails on the copper plates 
+\end{tabular}
+
+\end{flushleft}
+
+%\newpage
+%\hypertarget{gmat}{\textsc{Gmat}\setmainfont{LMRoman10 Regular}\textregistered\setmainfont[SmallCapsFont=Fontin-SmallCaps]{Fontin-Regular}}
+
+%\XeTeXpdffile ''GMAT.pdf'' page 1 scaled 800
+
+\end{document}
